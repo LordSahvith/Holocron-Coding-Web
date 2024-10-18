@@ -69,9 +69,9 @@ function qAndA() {
 // TIMERS
 
 const waitTime = 3000;
-console.log(`setting a ${waitTime / 1000} second delay`);
 
 const timerFinished = () => {
+  getLoadingPercent(100);
   clearInterval(interval);
   console.log("\ndone");
   qAndA();
@@ -86,9 +86,13 @@ const incrementTime = () => {
   currentTime += waitInterval;
 
   const percentage = Math.floor((currentTime / waitTime) * 100);
-  process.stdout.clearLine();
-  process.stdout.cursorTo(0);
-  process.stdout.write(`waiting...${percentage}%`);
+  getLoadingPercent(percentage);
 };
 
 let interval = setInterval(incrementTime, waitInterval);
+
+function getLoadingPercent(percent) {  
+  process.stdout.clearLine();
+  process.stdout.cursorTo(0);
+  process.stdout.write(`loading...${percent}%`);
+}
