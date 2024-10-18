@@ -10,18 +10,16 @@ const path = require("path");
 console.log(`The file name is: ${path.basename(__filename)}`);
 
 for (let key in global) {
-    console.log(key);
+  console.log(key);
 }
-
-
 
 // ARGUMENTS
 
 console.log(process.argv);
 
 function grab(flag) {
-    let indexAfterFlag = process.argv.indexOf(flag) + 1;
-    return process.argv[indexAfterFlag];
+  let indexAfterFlag = process.argv.indexOf(flag) + 1;
+  return process.argv[indexAfterFlag];
 }
 
 let greeting = grab("--greeting");
@@ -30,42 +28,43 @@ let user = grab("--user");
 console.log(greeting);
 console.log(user);
 
-
-
 // STANDARD OUT
 
-process.stdout.write("Hello \n \n");
+function qAndA() {
+  process.stdout.write("Hello \n \n");
 
-const questions = [
+  const questions = [
     "What is your name?",
     "What would you rather be doing?",
-    "What is your preferred programming language?"
-]
+    "What is your preferred programming language?",
+  ];
 
-const answers = [];
+  const answers = [];
 
-function ask(index = 0) {
+  function ask(index = 0) {
     process.stdout.write(`\n\n\n ${questions[index]}`);
     process.stdout.write(` > `);
-}
+  }
 
-ask();
+  ask();
 
-process.stdin.on("data", function (data) {
+  process.stdin.on("data", function (data) {
     answers.push(data.toString().trim());
 
     if (answers.length < questions.length) {
-        ask(answers.length);
+      ask(answers.length);
     } else {
-        process.exit();
+      process.exit();
     }
-});
+  });
 
-process.on("exit", function() {
+  process.on("exit", function () {
     process.stdout.write("\n\n\n\n");
-    process.stdout.write(`Go be ${answers[1]} ${answers[0]} you can finish writing ${answers[2]} later.`);
-});
-
+    process.stdout.write(
+      `Go be ${answers[1]} ${answers[0]} you can finish writing ${answers[2]} later.`
+    );
+  });
+}
 
 // TIMERS
 
@@ -73,8 +72,9 @@ const waitTime = 3000;
 console.log(`setting a ${waitTime / 1000} second delay`);
 
 const timerFinished = () => {
-    clearInterval(inteval);
-    console.log("\ndone")
+  clearInterval(interval);
+  console.log("\ndone");
+  qAndA();
 };
 
 setTimeout(timerFinished, waitTime);
@@ -83,12 +83,12 @@ const waitInterval = 500;
 let currentTime = 0;
 
 const incrementTime = () => {
-    currentTime += waitInterval;
+  currentTime += waitInterval;
 
-    const percentage = Math.floor((currentTime / waitTime) * 100);
-    process.stdout.clearLine();
-    process.stdout.cursorTo(0);
-    process.stdout.write(`waiting...${percentage}%`);
-}
+  const percentage = Math.floor((currentTime / waitTime) * 100);
+  process.stdout.clearLine();
+  process.stdout.cursorTo(0);
+  process.stdout.write(`waiting...${percentage}%`);
+};
 
-let inteval = setInterval(incrementTime, waitInterval);
+let interval = setInterval(incrementTime, waitInterval);
