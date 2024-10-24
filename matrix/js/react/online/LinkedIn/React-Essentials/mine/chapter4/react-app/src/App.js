@@ -1,16 +1,15 @@
 import "./App.css";
-
-const cities = ["Tokyo", "SLC", "Las Vegas"];
-
-const [firstCity, secondCity] = cities;
-
-console.log(firstCity, secondCity);
+import { useState } from "react";
 
 function App({ library }) {
+  const [emotion, setEmotion] = useState("happy");
+
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello From {library}</h1>
+        <h1>Current emotion: {emotion}</h1>
+        <button onClick={() => setEmotion("sad")}>Sad</button>
+        <button onClick={() => setEmotion("excited")}>Excited</button>
       </header>
     </div>
   );
