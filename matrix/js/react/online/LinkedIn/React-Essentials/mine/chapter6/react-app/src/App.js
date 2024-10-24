@@ -1,6 +1,16 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 
+function GitHubUser({ name, location, image }) {
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>{location}</p>
+      <img src={image} height={150} alt={name} />
+    </div>
+  );
+}
+
 function App() {
   const [data, setData] = useState(null);
 
@@ -12,10 +22,14 @@ function App() {
   }, []);
 
   if (data) {
-    return <pre>{JSON.stringify(data, null, 2)}</pre>;
+    return (
+      <GitHubUser
+        name={data.name}
+        location={data.location}
+        image={data.avatar_url}
+      />
+    );
   }
-
-  return <h1>Data</h1>;
 }
 
 export default App;
