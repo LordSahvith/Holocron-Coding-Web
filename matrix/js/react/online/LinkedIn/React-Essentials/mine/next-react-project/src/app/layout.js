@@ -24,10 +24,13 @@ function Header() {
       <nav>
         <ul style={{ display: "flex", justifyContent: "space-evenly" }}>
           <li>
-            <Link href="/">Snowtooth Mountain</Link>
+            <Link href="/">Snowooth Mountain</Link>
           </li>
           <li>
             <Link href="/mountain">Mountain Info</Link>
+          </li>
+          <li>
+            <Link href="/hotels">Hotel Info</Link>
           </li>
         </ul>
       </nav>
