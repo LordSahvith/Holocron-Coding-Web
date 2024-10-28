@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <style>
+      img {
+        width: 100%;
+      }
+    </style>
+
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const animeTitles = [
+        "Dragon Ball",
+        "Dragon Ball Z",
+        "Demon Slayer",
+        "Naruto",
+        "Kengan Ashura",
+      ];
+
+      const animeObjects = animeTitles.map((anime, i) => ({
+        id: i,
+        title: anime,
+      }));
+
+      function Header(props) {
+        return (
+          <header>
+            <img
+              src="https://image.tmdb.org/t/p/original/bMczIqjYJX7BoYlUWYW4PNlfi0o.jpg"
+              alt="Dragon Ball Characters"
+            />
+            <h1>{props.title}</h1>
+          </header>
+        );
+      }
+
+      function AnimeList(props) {
+        return (
+          <main>
+            <h2>{props.sectionTitle}</h2>
+            <ul>
+              {props.animeTitles.map((anime) => (
+                <li key={anime.id}>{anime.title}</li>
+              ))}
+            </ul>
+          </main>
+        );
+      }
+
+      function Footer(props) {
+        return (
+          <footer>
+            <p>Copyright {props.year}</p>
+          </footer>
+        );
+      }
+
+      function App() {
+        return (
+          <React.Fragment>
+            <Header title="Anime" />
+            <AnimeList
+              sectionTitle="Favorite Animes:"
+              animeTitles={animeObjects}
+            />
+            <Footer year={new Date().getFullYear()} />
+          </React.Fragment>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

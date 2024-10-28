@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      let heading = React.createElement(
+        "h1",
+        null,
+        "Getting Started with React!!"
+      );
+
+      let ul = React.createElement(
+        "ul",
+        { style: { color: "#D40000" } },
+        React.createElement("li", null, "Monday"),
+        React.createElement("li", null, "Tuesday")
+      );
+
+      let animeTitles = (
+        <ul>
+          <li>Dragon Ball</li>
+          <li>Naruto</li>
+          <li>Demon Slayer</li>
+          <li>Kengan Ashura</li>
+        </ul>
+      );
+
+      let html = (
+        <div>
+          <h1>Anime</h1>
+          {animeTitles}
+        </div>
+      );
+
+      ReactDOM.render(html, document.getElementById("root"));
+    </script>
+  </body>
+</html>
