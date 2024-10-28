@@ -30,10 +30,10 @@ function Header() {
             <Link href="/mountain">Mountain Info</Link>
           </li>
           <li>
-            <Link href="/hotels">Hotel Info</Link>
+            <Link href="/hotels">Hotels</Link>
           </li>
           <li>
-            <Link href="/contact">Contact Info</Link>
+            <Link href="/contact">Contact Us</Link>
           </li>
         </ul>
       </nav>
