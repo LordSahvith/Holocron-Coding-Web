@@ -1,18 +1,33 @@
 import express from "express";
 
+let articlesInfo = [
+  {
+    name: "learn-react",
+    upvotes: 0,
+  },
+  {
+    name: "learn-node",
+    upvotes: 0,
+  },
+  {
+    name: "learn-mongodb",
+    upvotes: 0,
+  },
+];
+
 const app = express();
 app.use(express.json());
 
-app.get("/hello/:name/goodbye/:otherName", (req, res) => {
-  console.log(req.params);
+app.put("/api/articles/:name/upvote", (req, res) => {
   const { name } = req.params;
+  const article = articlesInfo.find((article) => article.name === name);
 
-  res.send(`Hello ${name}`);
-});
-
-app.post("/post", (req, res) => {
-  console.log(req.body);
-  res.send(`Hello ${req.body.name}`);
+  if (article) {
+    article.upvotes++;
+    res.send(`The ${name} article now has ${article.upvotes} upvotes`);
+  } else {
+    res.send("That article doesn't exist");
+  }
 });
 
 app.listen(8000, () => {
