@@ -52,5 +52,13 @@ app.post("/api/articles/:name/comments", (req, res) => {
 });
 
 app.listen(8000, () => {
+  fetch('https://www.fishwatch.gov/api/species')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data); // Log the data to the console
+  })
+  .catch(error => {
+    console.error('Error fetching fish species data:', error);
+  });cd
   console.log("Server is listening on port: 8000");
 });
