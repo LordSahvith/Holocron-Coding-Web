@@ -96,13 +96,6 @@
         border-radius: 4px;
         cursor: pointer;
       }
-
-      .hidden {
-        display: none;
-      }
-      .visible {
-        display: flex;
-      }
     </style>
   </head>
   <body>
@@ -150,20 +143,17 @@
       const modalOverlay = document.getElementById('modalOverlay');
 
       openModalBtn.addEventListener('click', () => {
-        modalOverlay.classList.add('visible');
-        modalOverlay.classList.remove('hidden');
+        modalOverlay.style.display = 'flex';
       });
 
       closeModalBtn.addEventListener('click', () => {
-        modalOverlay.classList.add('hidden');
-        modalOverlay.classList.remove('visible');
+        modalOverlay.style.display = 'none';
       });
 
       // Optional: close modal when clicking outside modal content
       modalOverlay.addEventListener('click', e => {
         if (e.target === modalOverlay) {
-          modalOverlay.classList.add('hidden');
-        modalOverlay.classList.remove('visible');
+          modalOverlay.style.display = 'none';
         }
       });
 
