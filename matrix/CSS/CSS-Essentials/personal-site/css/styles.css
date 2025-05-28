@@ -1,0 +1,83 @@
+/* SIMPLE NORMALIZED CSS 
+=============================*/
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111;
+  color: #f0f0f0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  background: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+ul,
+ol {
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0.25em 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* GLOBAL STYLES
+=============================*/
+
+/* NAV STYLES
+=============================*/
+
+/* HOME STYLES
+=============================*/
+
+/* RESUME STYLES
+=============================*/
+
+/* PROFILE STYLES
+=============================*/
+
+/* PROJECTS STYLES
+=============================*/
+
+/* WORK EXPERIENCE STYLES
+=============================*/
+
+/* EDUCATION STYLES
+=============================*/
+
+/* FOOTER STYLES
+=============================*/
