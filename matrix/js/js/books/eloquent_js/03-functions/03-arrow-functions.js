@@ -1,4 +1,5 @@
-/* Arrow functions are a more concise syntax for writing function expressions.
+/**
+ * Arrow functions are a more concise syntax for writing function expressions.
  * They are NOT hoisted, so they must be defined before they are called.
  * They do NOT have their own this, so they CANNOT be used as methods.
  * They CANNOT be used as constructors, so they CANNOT be used with new.
