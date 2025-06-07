@@ -1,9 +1,7 @@
 let rabbit = {};
-
 rabbit.speak = function (line) {
   console.log(`The rabbit says '${line}'`);
 };
-
 rabbit.speak("I'm alive."); // The rabbit says 'I'm alive.'
 
 function speak(line) {
@@ -11,10 +9,11 @@ function speak(line) {
 }
 
 // create two different rabbit objects with speak function as a method
+// if you put () after function name it will invoke the function immediately
 let whiteRabbit = { type: 'white', speak };
 let hungryRabbit = { type: 'hungry', speak };
 
-// invoke the speak method on both objects
+// invoke the speak() method on both objects
 whiteRabbit.speak("Oh my ears and whiskers, how late it's getting!");
 // The white rabbit says 'Oh my ears and whiskers, how late it's getting!'
 
