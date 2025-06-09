@@ -21,6 +21,11 @@ Rabbit.prototype.speak = function (line) {
   console.log(`The ${this.type} rabbit says '${line}'`);
 };
 
+/**
+ * the `new` keyword tells the Object() (Rabbit()) to act as a constructor 
+ * which behinds the scenes binds `this` (weirdRabbit) to the object
+ * `weirdRabbit` when it's defined, not when it's invoked
+ */
 let weirdRabbit = new Rabbit('weird');
 weirdRabbit.speak('Hello!'); // The weird rabbit says 'Hello!'
 

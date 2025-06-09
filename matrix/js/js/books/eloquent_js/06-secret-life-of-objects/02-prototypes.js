@@ -1,3 +1,14 @@
+/**
+ * Prototypes:
+ * JS is a Prototypal Language that has similarities with OOP Classes
+ * like inheritance with properties and methods, however they are
+ * fundamentally different in a few ways, but the most important is
+ * that EVERY object inherits from Object.prototype and gets it's
+ * default properties and methods. There are other prototypes, like:
+ * Function.prototype & Array.prototype, that also inherit from
+ * Object.prototype, and that each Function and Array inherit from respectively.
+ */
+
 let empty = {};
 console.log(empty.toString); // ƒ toString() { [native code] }
 console.log(empty.toString()); // [object Object]

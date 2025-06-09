@@ -31,8 +31,7 @@ function normalizeArrow() {
   console.log(this.coords.map(n => n / this.length));
 }
 
-normalizeArrow.call({ coords: [0, 2, 3], length: 5 });
-// [0, 0.4, 0.6]
+normalizeArrow.call({ coords: [0, 2, 3], length: 5 }); // [0, 0.4, 0.6]
 
 // Regular functions bind their own `this`
 function normalizeWrapped() {
