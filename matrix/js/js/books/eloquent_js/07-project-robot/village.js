@@ -21,7 +21,7 @@ class VillageState {
     }
   }
 
-  static random(parcelCount = 5) {
+  static randomizeTasks(parcelCount = 5) {
     let parcels = [];
 
     for (let i = 0; i < parcelCount; i++) {

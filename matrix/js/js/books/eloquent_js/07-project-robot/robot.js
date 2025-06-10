@@ -1,16 +1,9 @@
-const VillageState = require('./village');
 const { roadGraph } = require('./roads');
 const { randomPick } = require('./lib/helpers');
 const { mailRoute, findRoute } = require('./routes');
 
-// let first = new VillageState('Post Office', [{ place: 'Post Office', address: "Alice's House" }]);
-// let next = first.move("Alice's House");
-
-// console.log(next.place); // Alice's House
-// console.log(next.parcels); // []
-// console.log(first.place); // Post Office
-
 function runRobot(state, robot, memory) {
+  let robotMemory = [];
   for (let turn = 0; ; turn++) {
     if (state.parcels.length === 0) {
       console.log(`Done in ${turn} turns`);
@@ -20,8 +13,11 @@ function runRobot(state, robot, memory) {
     let action = robot(state, memory);
     state = state.move(action.direction);
     memory = action.memory;
-    console.log(`Moved to ${action.direction}`);
+    let doneTask = `Moved to ${action.direction}`;
+    robotMemory.push(doneTask);
   }
+
+  return robotMemory;
 }
 
 function randomRobot(state) {
@@ -49,5 +45,29 @@ function goalOrientedRobot({ place, parcels }, route) {
   return { direction: route[0], memory: route.slice(1) };
 }
 
-let memory = [];
-runRobot(VillageState.random(), goalOrientedRobot, memory);
+function efficientRobot({ place, parcels }, route) {
+  if (!route || route.length === 0) {
+    let routes = parcels.map(parcel => {
+      if (parcel.place !== place) {
+        return { route: findRoute(roadGraph, place, parcel.place), pickup: true };
+      } else {
+        return { route: findRoute(roadGraph, place, parcel.address), pickup: false };
+      }
+    });
+
+    function scoreRoute({ route, pickup }) {
+      return (pickup ? 0.5 : 0) - route.length;
+    }
+    route = routes.reduce((a, b) => (scoreRoute(a) < scoreRoute(b) ? a : b)).route;
+  }
+
+  return { direction: route[0], memory: route.slice(1) };
+}
+
+module.exports = {
+  runRobot,
+  randomRobot,
+  routeRobot,
+  goalOrientedRobot,
+  efficientRobot,
+};
