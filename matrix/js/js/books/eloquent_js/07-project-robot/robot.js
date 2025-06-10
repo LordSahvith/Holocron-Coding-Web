@@ -2,6 +2,14 @@ const { roadGraph } = require('./roads');
 const { randomPick } = require('./lib/helpers');
 const { mailRoute, findRoute } = require('./routes');
 
+/**
+ * Simulates the Robots Dilivery Route
+ * @param {object} state - The Current Address and list of Parcels to be delivered
+ * @param {function} robot - the action that will handle the Robots Route
+ * @param {array} memory - list of routes and deliveries
+ * @returns {array} list of the routes the Robot took to achieve a successful devlivery
+ * @example [ "Moved to Alice's House", "Moved to Bob's House", "Moved to Town Hall", ... ]
+ */
 function runRobot(state, robot, memory) {
   let robotMemory = [];
   for (let turn = 0; ; turn++) {
@@ -20,10 +28,23 @@ function runRobot(state, robot, memory) {
   return robotMemory;
 }
 
+/**
+ * Randomly generates route based of parcels
+ * @param {object} state - list of parcels to be delivered
+ * @returns {object} next destination to visit
+ * @example { direction: "Alice's House" }
+ */
 function randomRobot(state) {
   return { direction: randomPick(roadGraph[state.place]) };
 }
 
+/**
+ *
+ * @param {null} state - not used but every other route function requires the state
+ * @param {array} memory - list of previoulsy visted address
+ * @returns {object} next destination to visit and previously visited addresses
+ * @example { direction: "Alice's House", memory: ["Cabin", "Post Office"] }
+ */
 function routeRobot(state, memory) {
   if (!memory || memory.length === 0) {
     memory = mailRoute;
@@ -32,6 +53,14 @@ function routeRobot(state, memory) {
   return { direction: memory[0], memory: memory.slice(1) };
 }
 
+/**
+ * Builds a route based off the parcels and the places the Robot has visited
+ * @param {string} place - Current Address
+ * @param {array} parcels - List of Parcels for the current Delivery
+ * @param {array} route - List of places already visited (robots memory)
+ * @returns {object} next destination to visit and previously visited addresses
+ * @example { direction: "Alice's House", memory: ["Cabin", "Post Office"] }
+ */
 function goalOrientedRobot({ place, parcels }, route) {
   if (!route || route.length === 0) {
     let parcel = parcels[0];
@@ -45,6 +74,14 @@ function goalOrientedRobot({ place, parcels }, route) {
   return { direction: route[0], memory: route.slice(1) };
 }
 
+/**
+ * Builds a more effecient route based off the parcels and the places the Robot has visited
+ * @param {string} place - Current Address
+ * @param {array} parcels - List of Parcels for the current Delivery
+ * @param {array} route - List of places already visited (robots memory)
+ * @returns {object} next destination to visit and previously visited addresses
+ * @example { direction: "Alice's House", memory: ["Cabin", "Post Office"] }
+ */
 function efficientRobot({ place, parcels }, route) {
   if (!route || route.length === 0) {
     let routes = parcels.map(parcel => {

@@ -1,6 +1,11 @@
 const { roadGraph } = require('./roads');
 const { randomPick } = require('./lib/helpers');
 
+/**
+ * The State of the Village:
+ * Number of Parcels that need delivering
+ * Handles Moving from one destination to the next
+ */
 class VillageState {
   constructor(place, parcels) {
     this.place = place;

@@ -14,6 +14,14 @@ const mailRoute = [
   'Post Office',
 ];
 
+/**
+ * Builds a route based on the Addresses of Parcels
+ * @param {object} graph - contains the Road Map 
+ * @param {string} from - Address currently at
+ * @param {string} to - Address to go to
+ * @returns {array} a list containing the route the robot will take
+ * @example [ "Marketplace", "Farm", "Grete's House", "Ernie's House", ]
+ */
 function findRoute(graph, from, to) {
   let work = [{ at: from, route: [] }];
   for (let i = 0; i < work.length; i++) {

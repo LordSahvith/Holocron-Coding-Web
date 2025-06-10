@@ -15,6 +15,12 @@ const roads = [
   'Shop-Town Hall',
 ];
 
+/**
+ * Build the the Graph or Road Map of each Address and the Addresses they are connected to
+ * @param {array} edges - list of Addresses Connected by a '-'
+ * @returns {object}  list of each Address with an Array of connecting addresses
+ * @example 'Post Office': [ "Alice's House", "Marketplace", ]
+ */
 function buildGraph(edges) {
   let graph = Object.create(null);
   function addEdge(from, to) {
