@@ -1,4 +1,5 @@
-const roadGraph = require('./graph');
+const { roadGraph } = require('./roads');
+const { randomPick } = require('./lib/helpers');
 
 class VillageState {
   constructor(place, parcels) {
@@ -18,6 +19,21 @@ class VillageState {
         .filter(parcel => parcel.place !== parcel.address);
       return new VillageState(destination, parcels);
     }
+  }
+
+  static random(parcelCount = 5) {
+    let parcels = [];
+
+    for (let i = 0; i < parcelCount; i++) {
+      let address = randomPick(Object.keys(roadGraph));
+      let place;
+      do {
+        place = randomPick(Object.keys(roadGraph));
+      } while (place === address);
+
+      parcels.push({ place, address });
+    }
+    return new VillageState('Post Office', parcels);
   }
 }
 
