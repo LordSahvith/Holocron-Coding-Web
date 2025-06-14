@@ -81,3 +81,41 @@ document
       ', 1950'
     )
   );
+
+/**
+ * Attributes
+ */
+let classifiedAttributes = document.body.getElementsByClassName('attributes')[0];
+let paragraphs1 = classifiedAttributes.getElementsByTagName('p');
+for (let paragraph of Array.from(paragraphs1)) {
+  if (paragraph.getAttribute('data-classified') === 'secret') {
+    paragraph.remove();
+  }
+}
+
+/**
+ * Layout
+ */
+let boxed = document.body.getElementsByClassName('layout')[0];
+console.log('clientHeight:', boxed.clientHeight);
+console.log('offsetHeight:', boxed.offsetHeight);
+
+function time(name, action) {
+  let start = Date.now(); // current time in Milliseconds
+  action();
+  console.log(name, 'took', Date.now() - start, 'ms');
+}
+
+time('naive', () => {
+  let target = document.getElementById('one');
+  while (target.offsetWidth < 2000) {
+    target.appendChild(document.createTextNode('X'));
+  }
+}); // naive took 7 ms
+
+time('clever', function () {
+  let target = document.getElementById('two');
+  target.appendChild(document.createTextNode('XXXX'));
+  let total = Math.ceil(2000 / (target.offsetWidth / 5));
+  target.firstChild.nodeValue = 'X'.repeat(total);
+}); // clever took 0 ms
