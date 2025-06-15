@@ -119,3 +119,25 @@ time('clever', function () {
   let total = Math.ceil(2000 / (target.offsetWidth / 5));
   target.firstChild.nodeValue = 'X'.repeat(total);
 }); // clever took 0 ms
+
+/**
+ * Styling
+ */
+let styledParagraph = document.getElementById('para');
+console.log(styledParagraph.style.color);
+styledParagraph.style.color = 'red';
+
+/**
+ * Positioning and Animating
+ */
+let dog = document.querySelector('.position-animation > img');
+let angle = Math.PI / 2;
+function animate(time, lastTime) {
+  if (lastTime !== null) {
+    angle += (time - lastTime) * 0.001;
+  }
+  dog.style.top = Math.sin(angle) * 20 + 'px';
+  dog.style.left = dog.offsetWidth + Math.cos(angle) * 200 + 'px';
+  requestAnimationFrame(newTime => animate(newTime, time));
+}
+animate(0, 0);

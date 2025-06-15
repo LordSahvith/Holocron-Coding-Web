@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document Structure</title>
+
+    <style>
+      .css strong {
+        font-style: italic;
+        color: gray;
+      }
+    </style>
   </head>
   <body>
     <h1>Page 1</h1>
@@ -60,6 +67,28 @@
     <section class="layout">
       <p><span id="one"></span></p>
       <p><span id="two"></span></p>
+    </section>
+
+    <section class="styling">
+      <a href=".">Normal</a>
+      <a href="." style="color: green">Green Link</a>
+      <p>
+        This text is displayed <strong>inline</strong>, <strong style="display: block">as a block</strong>, and
+        <strong style="display: none">not at all</strong>
+      </p>
+      <p id="para" style="color: purple">Nice text</p>
+    </section>
+
+    <section class="css">
+      <p>Now <strong>strong text</strong> in this section, is italic and gray.</p>
+    </section>
+
+    <section class="position-animation">
+      <img
+        src="https://picsum.photos/id/237/200/300"
+        alt="Picture of a Black Labrador puppy"
+        style="position: relative"
+      />
     </section>
 
     <script src="./main.js"></script>
