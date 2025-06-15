@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build A Table</title>
+
+    <style>
+      table {
+        border: 2px solid black;
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      th,
+      td {
+        border-bottom: 2px solid black;
+        border-right: 2px solid black;
+      }
+
+      th:last-child,
+      td:last-child {
+        border-right: none;
+      }
+
+      tr:nth-child(even) {
+        background-color: #ccc;
+      }
+
+      tr:last-child > td {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mountains</h1>
+
+    <section id="mountains"></section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
