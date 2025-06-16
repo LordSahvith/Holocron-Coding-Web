@@ -27,9 +27,20 @@
         height: 100px;
         width: 100px;
       }
+
+      #progress {
+        border-bottom: 2px solid blue;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
     </style>
   </head>
   <body>
+    <!-- Scroll Events -->
+    <div id="progress"></div>
+
     <!-- Event Handlers -->
     <p>Click this document to activate the handler.</p>
 
@@ -57,6 +68,15 @@
     <!-- Pointer Events: Mouse Motion -->
     <p>Drag the bar to change its width:</p>
     <div class="click-drag" style="background: orange; width: 60px; height: 20px"></div>
+
+    <!-- Focus Events -->
+    <p>Name: <input type="text" data-help="Your full name" /></p>
+    <p>Age: <input type="text" data-help="Age in years" /></p>
+    <p id="help"></p>
+
+    <!-- Debouncing -->
+    <textarea>Type something here...</textarea>
+    <div id="mouse-coords"></div>
 
     <script src="./main.js"></script>
   </body>

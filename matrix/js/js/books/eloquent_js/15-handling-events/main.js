@@ -143,3 +143,84 @@ function update(event) {
 window.addEventListener('touchstart', update);
 window.addEventListener('touchmove', update);
 window.addEventListener('touchend', update);
+
+/**
+ * Scroll Events
+ */
+// create some content
+document.body.appendChild(document.createTextNode('supercalifragilisticexpialidocious '.repeat(1000)));
+let scrollBar = document.querySelector('#progress');
+window.addEventListener('scroll', () => {
+  let max = document.body.scrollHeight - innerHeight;
+  scrollBar.style.width = `${(pageYOffset / max) * 100}%`;
+});
+
+/**
+ * Focus Events
+ */
+let help = document.querySelector('#help');
+let fields = document.querySelectorAll('input');
+
+for (let field of Array.from(fields)) {
+  field.addEventListener('focus', event => {
+    let text = event.target.getAttribute('data-help');
+    help.textContent = text;
+  });
+
+  field.addEventListener('blur', event => {
+    help.textContent = '';
+  });
+}
+
+/**
+ * Events and the Event Loop
+ */
+let squareWorker = new Worker('./code/squareworker.js');
+squareWorker.addEventListener('message', event => {
+  console.log('The worker responded:', event.data);
+});
+squareWorker.postMessage(10);
+squareWorker.postMessage(24);
+
+/**
+ * Timers
+ */
+let bombTimer = setTimeout(() => {
+  console.log('BOOM!');
+}, 500);
+
+if (Math.random() < 0.5) {
+  console.log('Defused.');
+  clearTimeout(bombTimer);
+}
+
+let ticks = 0;
+let clock = setInterval(() => {
+  console.log('tick', ticks++);
+
+  if (ticks === 10) {
+    clearInterval(clock);
+    console.log('stop');
+  }
+}, 200);
+
+/**
+ * Debouncing
+ */
+let textarea = document.querySelector('textarea');
+let timeout;
+textarea.addEventListener('input', () => {
+  clearTimeout(timeout);
+  timeout = setTimeout(() => console.log('Typed!'), 500);
+});
+
+let scheduled = null;
+window.addEventListener('mousemove', event => {
+  if (!scheduled) {
+    setTimeout(() => {
+      document.querySelector('#mouse-coords').textContent = `Mouse at ${scheduled.pageX}, ${scheduled.pageY}`;
+      scheduled = null;
+    });
+  }
+  scheduled = event;
+});
