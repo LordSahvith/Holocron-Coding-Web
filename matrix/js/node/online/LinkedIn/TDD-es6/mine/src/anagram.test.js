@@ -9,4 +9,11 @@ describe('isAnagram - basic functionality', () => {
 
     expect(actual).equal(expected);
   });
+
+  it("returns false if both strings aren't the same length", () => {
+    const expected = false;
+    const actual = isAnagram('below', 'elbows');
+
+    expect(actual).equal(expected);
+  });
 });
