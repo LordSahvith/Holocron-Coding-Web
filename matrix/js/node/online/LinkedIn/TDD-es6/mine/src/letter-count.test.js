@@ -8,4 +8,11 @@ describe('getLetterCount - basic functionality', () => {
 
     expect(actual).to.deep.equal(expected);
   });
+
+  it('return the correct letter count for a word with only ONE of each letter', () => {
+    const expected = { c: 1, a: 1, t: 1 };
+    const actual = getLetterCount('cat');
+
+    expect(actual).to.deep.equal(expected);
+  });
 });
