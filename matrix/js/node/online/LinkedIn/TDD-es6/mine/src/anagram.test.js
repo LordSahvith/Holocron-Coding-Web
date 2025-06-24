@@ -23,4 +23,12 @@ describe('isAnagram - basic functionality', () => {
 
     expect(actual).equal(expected);
   });
+
+  it('returns true even if the strings has spaces at the beginning or end of string', () => {
+    const expected = true;
+    const actual =
+      isAnagram('below ', ' elbow') && isAnagram(' listen ', 'silent ');
+
+    expect(actual).equal(expected);
+  });
 });
