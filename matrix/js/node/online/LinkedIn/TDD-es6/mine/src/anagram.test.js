@@ -16,4 +16,11 @@ describe('isAnagram - basic functionality', () => {
 
     expect(actual).equal(expected);
   });
+
+  it('returns true if both strings have exactly the same letters and letter counts', () => {
+    const expected = true;
+    const actual = isAnagram('below', 'elbow') && isAnagram('listen', 'silent');
+
+    expect(actual).equal(expected);
+  });
 });
