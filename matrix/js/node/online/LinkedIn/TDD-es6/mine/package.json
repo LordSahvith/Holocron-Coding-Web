@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register"
+    "test": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register",
+    "testServer": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file Server/src/mocha-setup.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "express": "^5.1.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "mongodb": "^6.17.0"
   }
 }
