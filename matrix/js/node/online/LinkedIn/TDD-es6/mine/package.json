@@ -15,11 +15,13 @@
     "@babel/preset-env": "^7.27.2",
     "@babel/register": "^7.27.1",
     "chai": "^5.2.0",
+    "chai-exclude": "^3.0.1",
     "mocha": "^11.7.1",
     "regenerator-runtime": "^0.14.1",
     "supertest": "^7.1.1"
   },
   "dependencies": {
+    "env": "^0.0.2",
     "express": "^5.1.0",
     "lodash": "^4.17.21",
     "mongodb": "^6.17.0"

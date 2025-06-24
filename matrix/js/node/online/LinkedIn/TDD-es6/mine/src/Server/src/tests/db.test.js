@@ -2,17 +2,15 @@ import { MongoClient } from 'mongodb';
 import { expect } from 'chai';
 import { getUserByUsername } from '../db';
 
+const DB_NAME = process.env.NODE_ENV === 'test' ? 'TEST_DB' : 'PROD_DB';
+
 describe('getUserByUsername', () => {
   it('get the correct user from the database given a username', async () => {
     const client = await MongoClient.connect(
-      `mongodb://localhost:27017/TEST_DB`,
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
+      `mongodb://localhost:27017/${DB_NAME}`
     );
 
-    const db = client.db('TEST_DB');
+    const db = client.db(DB_NAME);
 
     const fakeData = [
       {
@@ -41,7 +39,7 @@ describe('getUserByUsername', () => {
       email: 'abc@gmail.com',
     };
 
-    expect(actual).to.deep.equal(expected);
-    expect(finalDBState).to.deep.equal(fakeData);
+    expect(actual).excludingEvery('_id').to.deep.equal(expected);
+    expect(finalDBState).excludingEvery('_id').to.deep.equal(fakeData);
   });
 });
