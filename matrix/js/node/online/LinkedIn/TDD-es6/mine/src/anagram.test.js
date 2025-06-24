@@ -40,4 +40,14 @@ describe('isAnagram - basic functionality', () => {
 
     expect(actual).equal(expected);
   });
+
+  it('returns true regardless of case (lower or upper)', () => {
+    const expected = true;
+    const actual =
+      isAnagram('STATE', 'taste') &&
+      isAnagram('conversation', 'Voices rant on') &&
+      isAnagram('racecar', 'Car Race');
+
+    expect(actual).equal(expected);
+  });
 });
