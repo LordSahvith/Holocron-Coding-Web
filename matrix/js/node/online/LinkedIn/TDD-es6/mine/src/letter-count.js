@@ -2,9 +2,7 @@
 // 'better' -> { b: 1, e: 2, t: 2, r: 1 }
 
 export const getLetterCount = string => {
-  const letters = string.split('');
-
-  return letters.reduce(
+  return string.split('').reduce(
     (acc, letter) => ({
       ...acc,
       [letter]: acc[letter] ? acc[letter] + 1 : 1,
