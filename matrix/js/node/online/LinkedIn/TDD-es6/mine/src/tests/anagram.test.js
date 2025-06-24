@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { isAnagram } from './anagram';
+import { isAnagram } from '../anagram';
 
 describe('isAnagram - basic functionality', () => {
   it('returns false if either string has extra letters', () => {
