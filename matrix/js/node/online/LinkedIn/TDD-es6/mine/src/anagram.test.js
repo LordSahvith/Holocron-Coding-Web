@@ -4,7 +4,8 @@ import { isAnagram } from './anagram';
 describe('isAnagram - basic functionality', () => {
   it('returns false if either string has extra letters', () => {
     const expected = false;
-    const actual = isAnagram('below', 'elbows');
+    const actual =
+      isAnagram('below', 'elbows') && isAnagram('listens', 'silent');
 
     expect(actual).to.equal(expected);
   });
