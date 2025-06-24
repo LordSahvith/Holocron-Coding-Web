@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register",
-    "testServer": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/Server/src/mocha-setup.js"
+    "test:server": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/Server/src/mocha-setup.js",
+    "test:server:watch": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/Server/src/mocha-setup.js --watch",
+    "coverage": "nyc --reporter=lcov --reporter=text npm run test:server"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
     "chai": "^5.2.0",
     "chai-exclude": "^3.0.1",
     "mocha": "^11.7.1",
+    "nyc": "^17.1.0",
     "regenerator-runtime": "^0.14.1",
     "sinon": "^21.0.0",
     "supertest": "^7.1.1"
