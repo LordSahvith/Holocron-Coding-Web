@@ -31,4 +31,13 @@ describe('isAnagram - basic functionality', () => {
 
     expect(actual).equal(expected);
   });
+
+  it('returns true even if either the strings has spaces anywhere in string', () => {
+    const expected = true;
+    const actual =
+      isAnagram('conversation', 'voices rant on') &&
+      isAnagram('racecar', 'car race');
+
+    expect(actual).equal(expected);
+  });
 });
