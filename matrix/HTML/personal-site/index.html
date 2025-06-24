@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Essentials</title>
+
+    <style>
+      /* Simple normalized CSS */
+      html {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #000;
+        color: #d40000;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        line-height: 1.5;
+        min-height: 100vh;
+        background: inherit;
+        color: inherit;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: bold;
+        margin-bottom: 0.5em;
+      }
+
+      ul,
+      ol {
+        margin-left: 2em;
+        margin-bottom: 1em;
+      }
+
+      p {
+        margin-bottom: 1em;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+        margin: 0.25em 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      /* Modal styles */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal {
+        background: #222;
+        color: #fff;
+        padding: 2em;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        max-width: 90vw;
+        max-height: 80vh;
+        text-align: center;
+      }
+
+      .modal button {
+        margin-top: 1em;
+        background: #d40000;
+        color: #fff;
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .hidden {
+        display: none;
+      }
+      .visible {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my personal site</h1>
+    <p>This is a simple HTML page.</p>
+    <p>Feel free to explore!</p>
+
+    <button id="openModalBtn">Open Modal</button>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <h2>Simple Modal</h2>
+        <p>This is a modal window. Click the button below to close it.</p>
+        <button id="closeModalBtn">Close</button>
+      </div>
+    </div>
+
+    <section>
+      <h2>About Me</h2>
+      <p>I'm a web developer with a passion for coding.</p>
+      <p>I love learning new technologies and building cool projects.</p>
+      <div>
+        <h3>My Interests</h3>
+        <ul>
+          <li>Gaming</li>
+          <li>Coding</li>
+          <li>Music</li>
+        </ul>
+
+        <div>
+          <h4>My Favorite Languages</h4>
+          <ol>
+            <li>JavaScript</li>
+            <li>C++</li>
+            <li>HTML & CSS</li>
+          </ol>
+        </div>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.200982514478!2d-111.891597916751!3d40.761710453639104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752f51053a20201%3A0x854e30471263b928!2sThe%20Green%20Pig%20Pub!5e0!3m2!1sen!2sus!4v1747967262049!5m2!1sen!2sus"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+
+    <script>
+      // Modal functionality
+      const openModalBtn = document.getElementById('openModalBtn');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const modalOverlay = document.getElementById('modalOverlay');
+
+      openModalBtn.addEventListener('click', () => {
+        modalOverlay.classList.add('visible');
+        modalOverlay.classList.remove('hidden');
+      });
+
+      closeModalBtn.addEventListener('click', () => {
+        modalOverlay.classList.add('hidden');
+        modalOverlay.classList.remove('visible');
+      });
+
+      // Optional: close modal when clicking outside modal content
+      modalOverlay.addEventListener('click', e => {
+        if (e.target === modalOverlay) {
+          modalOverlay.classList.add('hidden');
+          modalOverlay.classList.remove('visible');
+        }
+      });
+
+      console.log('Hello, world!');
+    </script>
+  </body>
+</html>

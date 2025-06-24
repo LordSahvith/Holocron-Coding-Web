@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handling Events</title>
+
+    <style>
+      body {
+        height: 200px;
+        background: beige;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+        border-radius: 4px;
+        background: blue;
+        position: absolute;
+      }
+
+      .dot-touch {
+        position: absolute;
+        display: block;
+        border: 2px solid red;
+        border-radius: 50px;
+        height: 100px;
+        width: 100px;
+      }
+
+      #progress {
+        border-bottom: 2px solid blue;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Scroll Events -->
+    <div id="progress"></div>
+
+    <!-- Event Handlers -->
+    <p>Click this document to activate the handler.</p>
+
+    <!-- Events and DOM Nodes -->
+    <button class="click-me">Click Me</button>
+    <p>No handler here.</p>
+    <button class="act-once">Act-once button</button>
+
+    <!-- Event Objects -->
+    <button class="any-way">Click me any way you want</button>
+
+    <!-- Propogation -->
+    <p class="prop-p">A paragraph with a <button class="prop-btn">button</button>.</p>
+    <button>A</button>
+    <button>B</button>
+    <button>C</button>
+
+    <!-- Default Actions -->
+    <a class="default-a" href="https://developer.mozilla.org/">MDN</a>
+
+    <!-- Key Events -->
+    <p>This page turns violet when you hold the V key.</p>
+    <p>Press Control-Space to continue</p>
+
+    <!-- Pointer Events: Mouse Motion -->
+    <p>Drag the bar to change its width:</p>
+    <div class="click-drag" style="background: orange; width: 60px; height: 20px"></div>
+
+    <!-- Focus Events -->
+    <p>Name: <input type="text" data-help="Your full name" /></p>
+    <p>Age: <input type="text" data-help="Age in years" /></p>
+    <p id="help"></p>
+
+    <!-- Debouncing -->
+    <textarea>Type something here...</textarea>
+    <div id="mouse-coords"></div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

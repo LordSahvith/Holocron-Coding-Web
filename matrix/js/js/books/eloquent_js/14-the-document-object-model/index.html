@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Structure</title>
+
+    <style>
+      .css strong {
+        font-style: italic;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Page 1</h1>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, repellat voluptatem odit rerum iste nulla maxime
+      ea ex dolor odio at sit, possimus delectus fuga magni assumenda, id voluptate aliquid!
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat totam error placeat aliquam dicta illo quo
+      incidunt. Voluptate placeat non quo ipsa id obcaecati ex excepturi, omnis reprehenderit reiciendis!
+      <a href="./page2.html">Placeat</a>!
+    </p>
+
+    <p>This line is for the JavaScript example.</p>
+
+    <p id="test">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolores quibusdam minus nihil commodi magni
+      numquam. Omnis illo atque quisquam a minima eaque in maxime! Enim adipisci quibusdam ad laboriosam?
+    </p>
+
+    <section class="reordering">
+      <p>Three</p>
+      <p>One</p>
+      <p>Two</p>
+    </section>
+
+    <section class="replace-image-with-alt">
+      <p>
+        <img src="https://picsum.photos/id/237/200/300" alt="replaced image with this text." />
+        <img src="https://picsum.photos/id/237/200/300" alt="with great power, comes great responsibility." />
+      </p>
+
+      <button onclick="replaceImages()">Replace</button>
+    </section>
+
+    <section class="quote-attribution">
+      <blockquote id="no-finish">
+        No book can ever be finished. While working on it we learn just enough to find it immature the moment we turn
+        away from it.
+      </blockquote>
+    </section>
+
+    <section class="attributes">
+      <p data-classified="secret">The launch code is 00000000.</p>
+      <p data-classified="unclassified">I have two feet.</p>
+    </section>
+
+    <section class="layout" style="border: 4px solid #d40000">
+      <p>I'm boxed in</p>
+    </section>
+
+    <section class="layout">
+      <p><span id="one"></span></p>
+      <p><span id="two"></span></p>
+    </section>
+
+    <section class="styling">
+      <a href=".">Normal</a>
+      <a href="." style="color: green">Green Link</a>
+      <p>
+        This text is displayed <strong>inline</strong>, <strong style="display: block">as a block</strong>, and
+        <strong style="display: none">not at all</strong>
+      </p>
+      <p id="para" style="color: purple">Nice text</p>
+    </section>
+
+    <section class="css">
+      <p>Now <strong>strong text</strong> in this section, is italic and gray.</p>
+    </section>
+
+    <section class="position-animation">
+      <img
+        src="https://picsum.photos/id/237/200/300"
+        alt="Picture of a Black Labrador puppy"
+        style="position: relative"
+      />
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
