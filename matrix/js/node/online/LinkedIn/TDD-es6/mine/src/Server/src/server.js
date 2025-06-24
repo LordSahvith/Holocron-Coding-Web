@@ -8,7 +8,12 @@ app.get('/users/:username', async (req, res) => {
 
   try {
     const user = await db.getUserByUsername(username);
-    res.json(user);
+
+    if (user) {
+      res.json(user);
+    } else {
+      res.status(404).send();
+    }
   } catch (error) {
     res.status(500).json(error);
   }
