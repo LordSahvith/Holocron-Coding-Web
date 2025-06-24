@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register",
-    "testServer": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file Server/src/mocha-setup.js"
+    "testServer": "npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/Server/src/mocha-setup.js"
   },
   "keywords": [],
   "author": "",
