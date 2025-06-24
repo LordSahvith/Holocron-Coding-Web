@@ -1,17 +1,13 @@
-import { MongoClient } from 'mongodb';
 import { expect } from 'chai';
 import { getUserByUsername } from '../db';
-
-const DB_NAME = process.env.NODE_ENV === 'test' ? 'TEST_DB' : 'PROD_DB';
+import {
+  getDatabaseData,
+  resetDatabase,
+  setDatabaseData,
+} from '../../helpers/test-helpers';
 
 describe('getUserByUsername', () => {
   it('get the correct user from the database given a username', async () => {
-    const client = await MongoClient.connect(
-      `mongodb://localhost:27017/${DB_NAME}`
-    );
-
-    const db = client.db(DB_NAME);
-
     const fakeData = [
       {
         id: '123',
@@ -25,13 +21,12 @@ describe('getUserByUsername', () => {
       },
     ];
 
-    await db.collection('users').insertMany(fakeData);
-    const actual = await getUserByUsername('abc');
-    const finalDBState = await db.collection('users').find().toArray();
+    await setDatabaseData('users', fakeData);
 
-    // drop and close before assertions in case of failure
-    await db.dropDatabase();
-    client.close();
+    const actual = await getUserByUsername('abc');
+    const finalDBState = await getDatabaseData('users');
+
+    await resetDatabase();
 
     const expected = {
       id: '123',
