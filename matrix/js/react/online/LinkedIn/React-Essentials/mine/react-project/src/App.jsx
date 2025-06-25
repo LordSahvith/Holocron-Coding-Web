@@ -1,20 +1,14 @@
 import { useState } from 'react';
 import './App.css';
 
-function Header({ title }) {
-  const [status, setStatus] = useState(true);
-
-  const toggleRestaurant = () => {
-    setStatus(!status);
-  };
-
+function Header({ title, openStatus, onStatus }) {
   return (
     <header>
       <h1>{title}</h1>
       <h2>We serve the most delicious food around.</h2>
-      <p>The restaurant is currently {status ? 'open' : 'closed'}</p>
-      <button onClick={toggleRestaurant}>
-        {status ? 'Close' : 'Open'} Restaurant
+      <p>The restaurant is currently {openStatus ? 'open' : 'closed'}</p>
+      <button onClick={() => onStatus(!openStatus)}>
+        {openStatus ? 'Close' : 'Open'} Restaurant
       </button>
     </header>
   );
@@ -47,10 +41,16 @@ function Menu({ menuItems }) {
 }
 
 function App() {
+  const [status, setStatus] = useState(true);
+
   return (
     // React Fragment doesn't add anything to the DOM, just a react quirk
     <>
-      <Header title="Lord Savith's Kitchen" />
+      <Header
+        title="Lord Savith's Kitchen"
+        openStatus={status}
+        onStatus={setStatus}
+      />
       <main>
         <img
           src="https://picsum.photos/id/42/200/300"
