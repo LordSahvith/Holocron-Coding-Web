@@ -11,7 +11,7 @@ const articles = [
   },
   {
     name: 'learn-node',
-    title: 'The Fastest Way to Node.js',
+    title: 'The Fastest Way to Learn Node.js',
     content: [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, omnis laudantium id repellat necessitatibus itaque. Inventore suscipit fugiat nihil velit illo iste voluptatem animi, reprehenderit tempora culpa. Eligendi, officiis dolor.',
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, omnis laudantium id repellat necessitatibus itaque. Inventore suscipit fugiat nihil velit illo iste voluptatem animi, reprehenderit tempora culpa. Eligendi, officiis dolor.',
@@ -21,7 +21,7 @@ const articles = [
   },
   {
     name: 'learn-mongodb',
-    title: 'The Fastest Way to MongoDB',
+    title: 'The Fastest Way to Learn MongoDB',
     content: [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, omnis laudantium id repellat necessitatibus itaque. Inventore suscipit fugiat nihil velit illo iste voluptatem animi, reprehenderit tempora culpa. Eligendi, officiis dolor.',
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, omnis laudantium id repellat necessitatibus itaque. Inventore suscipit fugiat nihil velit illo iste voluptatem animi, reprehenderit tempora culpa. Eligendi, officiis dolor.',
