@@ -45,6 +45,7 @@ function App() {
 
   useEffect(() => {
     console.log(`The restaurant is ${status ? 'open' : 'closed'}`);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
 
   return (
