@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import './App.css';
 
 function Header({ title, openStatus, onStatus }) {
@@ -42,6 +42,10 @@ function Menu({ menuItems }) {
 
 function App() {
   const [status, toggle] = useReducer(status => !status, true);
+
+  useEffect(() => {
+    console.log(`The restaurant is ${status ? 'open' : 'closed'}`);
+  }, [status]);
 
   return (
     // React Fragment doesn't add anything to the DOM, just a react quirk
