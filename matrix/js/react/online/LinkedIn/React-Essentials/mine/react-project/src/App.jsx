@@ -9,7 +9,14 @@ function Header({ title }) {
   );
 }
 
-const items = ['Ham Sandwich', 'Ramen', 'Tuna Sandwich', 'Sloppy Joes'];
+const items = [
+  'Coffee',
+  'Bacon & Eggs',
+  'Ham Sandwich',
+  'Ramen',
+  'Tuna Sandwich',
+  'Sloppy Joes',
+];
 
 const itemsObject = items.map((item, i) => ({
   id: i,
@@ -30,9 +37,16 @@ function Menu({ menuItems }) {
 
 function App() {
   return (
+    // React Fragment doesn't add anything to the DOM, just a react quirk
     <>
       <Header title="Lord Savith's Kitchen" />
-      <Menu menuItems={itemsObject} />
+      <main>
+        <img
+          src="https://picsum.photos/id/42/200/300"
+          alt="Coffee Shop Table with two coffee cups."
+        />
+        <Menu menuItems={itemsObject} />
+      </main>
     </>
   );
 }
