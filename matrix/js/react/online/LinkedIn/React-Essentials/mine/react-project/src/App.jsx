@@ -1,10 +1,21 @@
+import { useState } from 'react';
 import './App.css';
 
 function Header({ title }) {
+  const [status, setStatus] = useState(true);
+
+  const toggleRestaurant = () => {
+    setStatus(!status);
+  };
+
   return (
     <header>
       <h1>{title}</h1>
       <h2>We serve the most delicious food around.</h2>
+      <p>The restaurant is currently {status ? 'open' : 'closed'}</p>
+      <button onClick={toggleRestaurant}>
+        {status ? 'Close' : 'Open'} Restaurant
+      </button>
     </header>
   );
 }
