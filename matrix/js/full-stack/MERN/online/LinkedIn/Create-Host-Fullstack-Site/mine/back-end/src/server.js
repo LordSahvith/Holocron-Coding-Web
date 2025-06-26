@@ -1,19 +1,22 @@
 import express from 'express';
 
+const articleInfo = [
+  { name: 'learn-react', upvotes: 0 },
+  { name: 'learn-node', upvotes: 0 },
+  { name: 'learn-mongodb', upvotes: 0 },
+];
+
 const app = express();
 
 app.use(express.json());
 
-app.get('/hello', (req, res) => {
-  res.send('Hello from a GET endpooint');
-});
+app.post('/api/articles/:name/upvote', (req, res) => {
+  const article = articleInfo.find(article => article.name === req.params.name);
+  article.upvotes += 1;
 
-app.get('/hello/:name', (req, res) => {
-  res.send(`Hello, ${req.params.name} from a GET endpooint`);
-});
-
-app.post('/hello', (req, res) => {
-  res.send(`Hello, ${req.body.name}, from a POST endpoint`);
+  res.send(
+    `Success! The article ${req.params.name} now has ${article.upvotes} upvotes!`
+  );
 });
 
 app.listen(8000, () => {
