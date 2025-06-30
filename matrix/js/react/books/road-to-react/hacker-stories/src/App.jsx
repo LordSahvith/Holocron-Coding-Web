@@ -39,7 +39,7 @@ function Search() {
 
 function Item({ item }) {
   return (
-    <li key={item.objectID}>
+    <li>
       <span>
         <a href={item.url}>{item.title}</a>
       </span>
@@ -54,7 +54,7 @@ function List({ list }) {
   return (
     <ul>
       {list.map(item => {
-        return <Item item={item} />;
+        return <Item key={item.objectID} item={item} />;
       })}
     </ul>
   );
