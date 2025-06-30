@@ -50,7 +50,7 @@ function Item({ item }) {
   );
 }
 
-function List() {
+function List({ list }) {
   return (
     <ul>
       {list.map(item => {
@@ -67,7 +67,7 @@ function App() {
 
       <Search />
 
-      <List />
+      <List list={list} />
     </section>
   );
 }
