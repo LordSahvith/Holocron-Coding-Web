@@ -2,3 +2,5 @@
 examples
 node_modules
 .env
+.next
+.cache
