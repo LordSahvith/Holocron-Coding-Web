@@ -9,14 +9,6 @@ function getGreeting({ greeting, title }) {
   return `${greeting} ${title}`;
 }
 
-const numbers = [1, 2, 3, 4];
-
-const exponentialNumbers = numbers.map(number => {
-  return number * number;
-});
-
-console.log(exponentialNumbers);
-
 const list = [
   {
     title: 'React',
@@ -36,25 +28,46 @@ const list = [
   },
 ];
 
+function Search() {
+  return (
+    <>
+      <label htmlFor="search">Search: </label>
+      <input id="search" type="text" />
+    </>
+  );
+}
+
+function Item(props) {
+  return (
+    <li key={props.item.objectID}>
+      <span>
+        <a href={props.item.url}>{props.item.title}</a>
+      </span>
+      <span> - {props.item.author}</span>
+      <span>{props.item.num_comments}</span>
+      <span>{props.item.points}</span>
+    </li>
+  );
+}
+
+function List() {
+  return (
+    <ul>
+      {list.map(item => {
+        return <Item item={item} />;
+      })}
+    </ul>
+  );
+}
+
 function App() {
   return (
     <section>
       <h1>{getGreeting(welcome)}</h1>
 
-      <ul>
-        {list.map(item => {
-          return (
-            <li key={item.objectID}>
-              <span>
-                <a href={item.url}>{item.title}</a>
-              </span>
-              <span>{item.author}</span>
-              <span>{item.num_comments}</span>
-              <span>{item.points}</span>
-            </li>
-          );
-        })}
-      </ul>
+      <Search />
+
+      <List />
     </section>
   );
 }
