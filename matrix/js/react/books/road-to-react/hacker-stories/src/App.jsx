@@ -29,10 +29,18 @@ const list = [
 ];
 
 function Search() {
+  const handleChange = function (event) {
+    // synthetic event
+    console.log(event);
+
+    // value of target
+    console.log(event.target.value);
+  };
+
   return (
     <>
       <label htmlFor="search">Search: </label>
-      <input id="search" type="text" />
+      <input id="search" type="text" onChange={handleChange} />
     </>
   );
 }
