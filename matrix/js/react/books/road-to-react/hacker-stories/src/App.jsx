@@ -1,20 +1,14 @@
 import { useState } from 'react';
 import './App.css';
 
-const welcome = {
-  greeting: 'Hey',
-  title: 'React',
-};
-
-function getGreeting({ greeting, title }) {
-  return `${greeting} ${title}`;
-}
-
-function Search() {
+function Search({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleChange = function (event) {
     setSearchTerm(event.target.value);
+
+    // Callback Handler for App Component
+    onSearch(event);
   };
 
   return (
@@ -72,11 +66,17 @@ function App() {
     },
   ];
 
+  // callback handler for Search Component
+  const handleSearch = function (event) {
+    console.log(event.target.value);
+  };
+
   return (
     <section>
-      <h1>{getGreeting(welcome)}</h1>
+      <h1>My Hacker Stories</h1>
 
-      <Search />
+      {/* pass callback handler to Search Component */}
+      <Search onSearch={handleSearch} />
 
       <List list={stories} />
     </section>
