@@ -2,23 +2,10 @@ import { useState } from 'react';
 import './App.css';
 
 function Search({ onSearch }) {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleChange = function (event) {
-    setSearchTerm(event.target.value);
-
-    // Callback Handler for App Component
-    onSearch(event);
-  };
-
   return (
     <>
       <label htmlFor="search">Search: </label>
-      <input id="search" type="text" onChange={handleChange} />
-
-      <p>
-        Searching for <strong>{searchTerm}</strong>.
-      </p>
+      <input id="search" type="text" onChange={onSearch} />
     </>
   );
 }
@@ -26,12 +13,8 @@ function Search({ onSearch }) {
 function Item({ item }) {
   return (
     <li>
-      <span>
-        <a href={item.url}>{item.title}</a>
-      </span>
-      <span> - {item.author}</span>
-      <span>{item.num_comments}</span>
-      <span>{item.points}</span>
+      <a href={item.url}>{item.title}</a> - {item.author} {item.num_comments}{' '}
+      {item.points}
     </li>
   );
 }
@@ -66,19 +49,25 @@ function App() {
     },
   ];
 
-  // callback handler for Search Component
+  const [searchTerm, setSearchTerm] = useState('');
+
   const handleSearch = function (event) {
-    console.log(event.target.value);
+    setSearchTerm(event.target.value);
   };
+
+  const searchedStories = stories.filter(story =>
+    story.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <section>
       <h1>My Hacker Stories</h1>
 
-      {/* pass callback handler to Search Component */}
       <Search onSearch={handleSearch} />
 
-      <List list={stories} />
+      <hr />
+
+      <List list={searchedStories} />
     </section>
   );
 }
