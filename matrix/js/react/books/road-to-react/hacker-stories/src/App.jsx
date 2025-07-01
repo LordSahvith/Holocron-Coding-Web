@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import './App.css';
 
-function Search({ onSearch }) {
+function Search({ search, onSearch }) {
   return (
     <>
       <label htmlFor="search">Search: </label>
-      <input id="search" type="text" onChange={onSearch} />
+      <input id="search" type="text" value={search} onChange={onSearch} />
     </>
   );
 }
@@ -63,7 +63,7 @@ function App() {
     <section>
       <h1>My Hacker Stories</h1>
 
-      <Search onSearch={handleSearch} />
+      <Search search={searchTerm} onSearch={handleSearch} />
 
       <hr />
 
