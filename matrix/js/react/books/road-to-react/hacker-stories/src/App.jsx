@@ -1,11 +1,24 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 
-function InputWithLabel({ id, value, type = 'text', onInputChange, children }) {
+function InputWithLabel({
+  id,
+  value,
+  type = 'text',
+  isFocused,
+  onInputChange,
+  children,
+}) {
   return (
     <>
-      <label htmlFor="search">{children}</label>
-      <input id={id} type={type} value={value} onChange={onInputChange} />
+      <label htmlFor={id}>{children}</label>
+      <input
+        id={id}
+        type={type}
+        value={value}
+        autoFocus={isFocused}
+        onChange={onInputChange}
+      />
     </>
   );
 }
@@ -76,8 +89,9 @@ function App() {
       <InputWithLabel
         id="search"
         label="Search"
-        value={setSearchTerm}
-        onSearch={handleSearch}
+        value={searchTerm}
+        isFocused
+        onInputChange={handleSearch}
       >
         <strong>Search</strong>:&nbsp;
       </InputWithLabel>
