@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 
-function InputWithLabel({ id, label, value, type = 'text', onInputChange }) {
+function InputWithLabel({ id, value, type = 'text', onInputChange, children }) {
   return (
     <>
-      <label htmlFor="search">{label}:&nbsp;</label>
+      <label htmlFor="search">{children}</label>
       <input id={id} type={type} value={value} onChange={onInputChange} />
     </>
   );
@@ -78,7 +78,9 @@ function App() {
         label="Search"
         value={setSearchTerm}
         onSearch={handleSearch}
-      />
+      >
+        <strong>Search</strong>:&nbsp;
+      </InputWithLabel>
 
       <hr />
 
