@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function Search({ search, onSearch }) {
@@ -49,7 +49,13 @@ function App() {
     },
   ];
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState(
+    localStorage.getItem('search') || ''
+  );
+
+  useEffect(() => {
+    localStorage.setItem('search', searchTerm);
+  }, [searchTerm]);
 
   const handleSearch = function (event) {
     setSearchTerm(event.target.value);
