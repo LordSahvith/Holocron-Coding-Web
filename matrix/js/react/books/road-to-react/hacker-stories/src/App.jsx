@@ -29,6 +29,16 @@ function List({ list }) {
   );
 }
 
+function useStorageState(key, initialState) {
+  const [value, setValue] = useState(localStorage.getItem(key) || initialState);
+
+  useEffect(() => {
+    localStorage.setItem(key, value);
+  }, [value, key]);
+
+  return [value, setValue];
+}
+
 function App() {
   const stories = [
     {
@@ -49,13 +59,7 @@ function App() {
     },
   ];
 
-  const [searchTerm, setSearchTerm] = useState(
-    localStorage.getItem('search') || ''
-  );
-
-  useEffect(() => {
-    localStorage.setItem('search', searchTerm);
-  }, [searchTerm]);
+  const [searchTerm, setSearchTerm] = useStorageState('search', '');
 
   const handleSearch = function (event) {
     setSearchTerm(event.target.value);
