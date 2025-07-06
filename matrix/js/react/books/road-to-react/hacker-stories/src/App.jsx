@@ -26,7 +26,7 @@ function App() {
         isFocused
         onInputChange={handleSearch}
       >
-        <strong>Search</strong>:&nbsp;
+        <strong>Search</strong>
       </InputWithLabel>
 
       <hr />
