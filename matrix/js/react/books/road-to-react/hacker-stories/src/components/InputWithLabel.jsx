@@ -18,7 +18,8 @@ function InputWithLabel({
 
   return (
     <>
-      <label htmlFor={id}>{children}:&nbsp;</label>
+      <label htmlFor={id}>{children}</label>
+      &nbsp;
       <input
         ref={inputRef}
         id={id}

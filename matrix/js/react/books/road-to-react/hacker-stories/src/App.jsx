@@ -1,11 +1,22 @@
+import { useState } from 'react';
 import InputWithLabel from './components/InputWithLabel';
 import List from './components/List';
 import useStorageState from './lib/helper';
-import { stories } from './lib/data';
+import { initialStories } from './lib/data';
 import './App.css';
 
 function App() {
   const [searchTerm, setSearchTerm] = useStorageState('search', '');
+
+  const [stories, setStories] = useState(initialStories);
+
+  const handleRemoveStory = item => {
+    const newStories = stories.filter(
+      story => item.objectID !== story.objectID
+    );
+
+    setStories(newStories);
+  };
 
   const handleSearch = function (event) {
     setSearchTerm(event.target.value);
@@ -26,12 +37,12 @@ function App() {
         isFocused
         onInputChange={handleSearch}
       >
-        <strong>Search</strong>
+        <strong>Search:</strong>
       </InputWithLabel>
 
       <hr />
 
-      <List list={searchedStories} />
+      <List list={searchedStories} onRemoveItem={handleRemoveStory} />
     </section>
   );
 }
