@@ -1,8 +1,10 @@
 import { useEffect, useReducer } from 'react';
 import InputWithLabel from './components/InputWithLabel';
 import List from './components/List';
-import { useStorageState, getAsyncStories, storiesReducer } from './lib/helper';
+import { useStorageState, storiesReducer } from './lib/helper';
 import './App.css';
+
+const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
 function App() {
   const [searchTerm, setSearchTerm] = useStorageState('search', '');
@@ -16,11 +18,12 @@ function App() {
   useEffect(() => {
     dispatchStories({ type: 'STORIES_FETCH_INIT' });
 
-    getAsyncStories()
+    fetch(`${API_ENDPOINT}react`)
+      .then(response => response.json())
       .then(result => {
         dispatchStories({
           type: 'STORIES_FETCH_SUCCESS',
-          payload: result.data.stories,
+          payload: result.hits,
         });
       })
       .catch(() => dispatchStories({ type: 'STORIES_FETCH_FAILURE' }));

@@ -2,7 +2,9 @@ function Item({ item, onRemoveItem }) {
   return (
     <li>
       <a href={item.url}>{item.title}</a>
-      {` - ${item.author} ${item.num_comments} ${item.points} `}
+      {` - Author: ${item.author} -
+      Comments: ${item.num_comments} -
+      Points: ${item.points} `}
       <button type="button" onClick={() => onRemoveItem(item)}>
         Dismiss
       </button>
