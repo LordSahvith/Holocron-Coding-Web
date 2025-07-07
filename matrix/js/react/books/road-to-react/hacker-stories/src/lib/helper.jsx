@@ -50,4 +50,4 @@ function storiesReducer(state, action) {
   }
 }
 
-export default { useStorageState, getAsyncStories, storiesReducer };
+export { useStorageState, getAsyncStories, storiesReducer };
