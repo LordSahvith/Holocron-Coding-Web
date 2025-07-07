@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useReducer, useState } from 'react';
+import axios from 'axios';
 import InputWithLabel from './components/InputWithLabel';
 import List from './components/List';
 import { useStorageState, storiesReducer } from './lib/helper';
-import axios from 'axios';
 import './App.css';
 
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
@@ -45,7 +45,8 @@ function App() {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearchSubmit = function () {
+  const handleSearchSubmit = function (event) {
+    event.preventDefault();
     setUrl(`${API_ENDPOINT}${searchTerm}`);
   };
 
@@ -53,19 +54,21 @@ function App() {
     <section>
       <h1>My Hacker Stories</h1>
 
-      <InputWithLabel
-        id="search"
-        label="Search"
-        value={searchTerm}
-        isFocused
-        onInputChange={handleSearchInput}
-      >
-        <strong>Search:</strong>
-      </InputWithLabel>
+      <form onSubmit={handleSearchSubmit}>
+        <InputWithLabel
+          id="search"
+          label="Search"
+          value={searchTerm}
+          isFocused
+          onInputChange={handleSearchInput}
+        >
+          <strong>Search:</strong>
+        </InputWithLabel>
 
-      <button type="button" disabled={!searchTerm} onClick={handleSearchSubmit}>
-        Submit
-      </button>
+        <button type="submit" disabled={!searchTerm}>
+          Submit
+        </button>
+      </form>
 
       <hr />
 
