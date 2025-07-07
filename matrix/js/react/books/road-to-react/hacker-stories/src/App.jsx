@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from 'react';
+import { useCallback, useEffect, useReducer } from 'react';
 import InputWithLabel from './components/InputWithLabel';
 import List from './components/List';
 import { useStorageState, storiesReducer } from './lib/helper';
@@ -15,7 +15,7 @@ function App() {
     isError: false,
   });
 
-  useEffect(() => {
+  const handleFetchStories = useCallback(() => {
     if (!searchTerm) return;
 
     dispatchStories({ type: 'STORIES_FETCH_INIT' });
@@ -30,6 +30,10 @@ function App() {
       })
       .catch(() => dispatchStories({ type: 'STORIES_FETCH_FAILURE' }));
   }, [searchTerm]);
+
+  useEffect(() => {
+    handleFetchStories();
+  }, [handleFetchStories]);
 
   const handleRemoveStory = item => {
     dispatchStories({
