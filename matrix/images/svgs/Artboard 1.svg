@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: UppercutAngle, 'Uppercut Angle';
+        font-size: 9.9px;
+      }
+
+      .cls-1, .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <rect class="cls-3" width="16" height="16"/>
+  </g>
+  <g id="Layer_2" data-name="Layer 2">
+    <g class="cls-2">
+      <text class="cls-1" transform="translate(.54 11.3)"><tspan x="0" y="0">CM</tspan></text>
+    </g>
+  </g>
+</svg>
