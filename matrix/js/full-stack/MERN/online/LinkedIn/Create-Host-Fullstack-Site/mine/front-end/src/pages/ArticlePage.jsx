@@ -6,6 +6,8 @@ export default function ArticlePage() {
 
   const article = articles.find(article => article.name === name);
 
+  if (!article) throw Error('Article not found');
+
   return (
     <>
       <h1>{article.title}</h1>
