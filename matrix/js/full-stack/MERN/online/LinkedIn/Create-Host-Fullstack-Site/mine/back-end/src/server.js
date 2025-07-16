@@ -2,12 +2,6 @@ import express from 'express';
 import { MongoClient, ReturnDocument } from 'mongodb';
 import 'colors';
 
-const articleInfo = [
-  { name: 'learn-react', upvotes: 0, comments: [] },
-  { name: 'learn-node', upvotes: 0, comments: [] },
-  { name: 'learn-mongodb', upvotes: 0, comments: [] },
-];
-
 const app = express();
 
 app.use(express.json());
@@ -45,17 +39,22 @@ app.post('/api/articles/:name/upvote', async (req, res) => {
   res.json(updatedArticle);
 });
 
-app.post('/api/articles/:name/comments', (req, res) => {
+app.post('/api/articles/:name/comments', async (req, res) => {
   const { name } = req.params;
   const { postedBy, text } = req.body;
-  const article = articleInfo.find(article => article.name === name);
+  const newComment = { postedBy, text };
 
-  article.comments.push({
-    postedBy,
-    text,
-  });
+  const updatedArticle = await db.collection('Articles').findOneAndUpdate(
+    { name },
+    {
+      $push: { comments: newComment },
+    },
+    {
+      returnDocument: 'after',
+    }
+  );
 
-  res.json(article);
+  res.json(updatedArticle);
 });
 
 async function start() {
