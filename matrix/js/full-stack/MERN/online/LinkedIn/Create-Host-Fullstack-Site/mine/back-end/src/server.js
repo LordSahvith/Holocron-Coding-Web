@@ -1,5 +1,6 @@
 import express from 'express';
-import colors from 'colors';
+import { MongoClient, ReturnDocument } from 'mongodb';
+import 'colors';
 
 const articleInfo = [
   { name: 'learn-react', upvotes: 0, comments: [] },
@@ -11,13 +12,37 @@ const app = express();
 
 app.use(express.json());
 
-app.post('/api/articles/:name/upvote', (req, res) => {
+let db;
+
+async function connectDB() {
+  const uri = 'mongodb://localhost:27017';
+  const client = new MongoClient(uri);
+
+  await client.connect();
+
+  db = client.db('Blog-Database');
+}
+
+app.get('/api/articles/:name', async (req, res) => {
   const { name } = req.params;
-  const article = articleInfo.find(article => article.name === name);
 
-  article.upvotes += 1;
-
+  const article = await db.collection('Articles').findOne({ name });
   res.json(article);
+});
+
+app.post('/api/articles/:name/upvote', async (req, res) => {
+  const { name } = req.params;
+  const updatedArticle = await db.collection('Articles').findOneAndUpdate(
+    { name },
+    {
+      $inc: { upvotes: 1 },
+    },
+    {
+      returnDocument: 'after',
+    }
+  );
+
+  res.json(updatedArticle);
 });
 
 app.post('/api/articles/:name/comments', (req, res) => {
@@ -33,8 +58,14 @@ app.post('/api/articles/:name/comments', (req, res) => {
   res.json(article);
 });
 
-const PORT = 8000;
-app.listen(PORT, () => {
-  const SERVER_URL = `http://localhost:${PORT}/`.underline.bold;
-  console.log(`Server is running: ${SERVER_URL}`.blue);
-});
+async function start() {
+  await connectDB();
+
+  const PORT = 8000;
+  app.listen(PORT, () => {
+    const SERVER_URL = `http://localhost:${PORT}/`.underline.bold;
+    console.log(`Server is running: ${SERVER_URL}`.blue);
+  });
+}
+
+start();
