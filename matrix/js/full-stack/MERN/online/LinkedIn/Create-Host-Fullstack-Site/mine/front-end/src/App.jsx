@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ArticlesListPage from './pages/ArticlesListPage';
 import ArticlePage from './pages/ArticlePage';
-import Layout from './Layout';
+import Layout from './components/Layout';
 import NotFoundPage from './pages/NotFoundPage';
 
 const routes = [
@@ -36,11 +36,7 @@ const routes = [
 const router = createBrowserRouter(routes);
 
 function App() {
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

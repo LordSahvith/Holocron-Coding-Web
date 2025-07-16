@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import articles from '../article-content';
+import articles from '../components/data/article-content';
 
 export default function ArticlePage() {
   const { name } = useParams();

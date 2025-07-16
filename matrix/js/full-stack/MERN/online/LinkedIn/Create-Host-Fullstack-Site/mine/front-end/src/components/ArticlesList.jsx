@@ -15,5 +15,5 @@ export default function ArticlesList({ articles }) {
 }
 
 ArticlesList.propTypes = {
-  articles: PropTypes.object.isRequired,
+  articles: PropTypes.array.isRequired,
 };
