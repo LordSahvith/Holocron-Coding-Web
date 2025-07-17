@@ -12,13 +12,17 @@ function Fetch({ login }) {
   return (
     <section>
       <h2>Custom: useFetch()</h2>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-      <img src={data.avatar_url} alt={data.login} />
-      <div>
-        <h3>{data.login}</h3>
-        {data.name && <p>{data.name}</p>}
-        {data.location && <p>{data.location}</p>}
-      </div>
+
+      {data && (
+        <>
+          <img src={data.avatar_url} alt={data.login} />
+          <div>
+            <h3>{data.login}</h3>
+            {data.name && <p>{data.name}</p>}
+            {data.location && <p>{data.location}</p>}
+          </div>
+        </>
+      )}
     </section>
   );
 }

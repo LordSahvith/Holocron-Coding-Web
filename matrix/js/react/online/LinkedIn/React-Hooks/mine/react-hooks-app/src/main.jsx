@@ -17,7 +17,9 @@ const trees = [
 ];
 
 createRoot(document.getElementById('root')).render(
-  <TreesContext.Provider value={{ trees }}>
-    <App />
-  </TreesContext.Provider>
+  <StrictMode>
+    <TreesContext.Provider value={{ trees }}>
+      <App />
+    </TreesContext.Provider>
+  </StrictMode>
 );
