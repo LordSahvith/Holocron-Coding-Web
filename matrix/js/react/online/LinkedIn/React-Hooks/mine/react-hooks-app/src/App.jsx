@@ -3,6 +3,9 @@ import State from './components/State';
 import Effect from './components/Effect';
 import Reducer from './components/Reducer';
 import Ref from './components/Ref';
+import CustomHook from './components/Custom';
+import Context from './components/Context';
+import Fetch from './components/Fetch';
 
 function App() {
   return (
@@ -15,6 +18,12 @@ function App() {
       <Reducer />
       <hr />
       <Ref />
+      <hr />
+      <CustomHook />
+      <hr />
+      <Context />
+      <hr />
+      <Fetch login="lordsahvith" />
     </div>
   );
 }
