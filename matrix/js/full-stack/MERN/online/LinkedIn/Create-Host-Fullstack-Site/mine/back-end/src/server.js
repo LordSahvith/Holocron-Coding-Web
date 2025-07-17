@@ -4,6 +4,13 @@ import admin from 'firebase-admin';
 import fs from 'fs';
 import 'colors';
 
+const PORT = process.env.PORT || 8000;
+
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __fileName = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__fileName);
+
 const credentials = JSON.parse(fs.readFileSync('./creds.json'));
 
 admin.initializeApp({
@@ -24,6 +31,12 @@ async function connectDB() {
 
   db = client.db('Blog-Database');
 }
+
+app.use(express.static(path.join(__dirname, '../dist')));
+
+app.get(/^(?!\/api).+/, (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 
 app.get('/api/articles/:name', async (req, res) => {
   const { name } = req.params;
@@ -91,7 +104,6 @@ app.post('/api/articles/:name/comments', async (req, res) => {
 async function start() {
   await connectDB();
 
-  const PORT = 8000;
   app.listen(PORT, () => {
     const SERVER_URL = `http://localhost:${PORT}/`.underline.bold;
     console.log(`Server is running: ${SERVER_URL}`.blue);
