@@ -29,7 +29,7 @@ function State() {
   const [status, setStatus] = useState('Not Delivered');
   const [checked, setChecked] = useState(false);
   return (
-    <div>
+    <section>
       <h2>useState()</h2>
       <div>
         <p>Package Status: {status}</p>
@@ -38,19 +38,19 @@ function State() {
 
       <div>
         <label>
-          {checked ? 'checked' : 'not checked'}
           <input
             type="checkbox"
             value={checked}
             onChange={() => setChecked(checked => !checked)}
           />
+          {checked ? 'not checked' : 'checked'}
         </label>
       </div>
 
       <div>
         <StarRating totalStars={5} />
       </div>
-    </div>
+    </section>
   );
 }
 
