@@ -2,6 +2,7 @@ import './App.css';
 import State from './components/State';
 import Effect from './components/Effect';
 import Reducer from './components/Reducer';
+import Ref from './components/Ref';
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <Effect />
       <hr />
       <Reducer />
+      <hr />
+      <Ref />
     </div>
   );
 }
