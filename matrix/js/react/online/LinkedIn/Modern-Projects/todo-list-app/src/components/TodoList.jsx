@@ -1,12 +1,16 @@
 import { useSelector } from 'react-redux';
 import NewTodoForm from './NewTodoForm';
 import TodoListItem from './TodoListItem';
+import {
+  getTodosLoading,
+  getCompletedTodos,
+  getIncompleteTodos,
+} from './selectors';
 
 function TodoList() {
-  const todosAreLoading = useSelector(state => !state.loading.value.completed);
-  const todos = useSelector(state => state.todos.value);
-  const completedTodos = todos.filter(todo => todo.isCompleted);
-  const incompleteTodos = todos.filter(todo => !todo.isCompleted);
+  const todosAreLoading = useSelector(getTodosLoading);
+  const completedTodos = useSelector(getCompletedTodos);
+  const incompleteTodos = useSelector(getIncompleteTodos);
 
   return (
     <div>
