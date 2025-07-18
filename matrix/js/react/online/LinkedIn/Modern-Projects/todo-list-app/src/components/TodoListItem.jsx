@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { markTodoAsComplete, deleteTodo } from './todoSlice';
+import { markTodoAsComplete } from './todoSlice';
+import { deleteTodo } from './thunks';
 
 function TodoListItem({ todo }) {
   const dispatch = useDispatch();
@@ -9,11 +10,11 @@ function TodoListItem({ todo }) {
       <h3>{todo.text}</h3>
       {todo.isCompleted && <p>Complete!</p>}
       {todo.isCompleted ? (
-        <button onClick={() => dispatch(deleteTodo(todo.text))}>
+        <button onClick={() => dispatch(deleteTodo(todo.id))}>
           Delete Item
         </button>
       ) : (
-        <button onClick={() => dispatch(markTodoAsComplete(todo.text))}>
+        <button onClick={() => dispatch(markTodoAsComplete(todo.id))}>
           Mark as Completed
         </button>
       )}

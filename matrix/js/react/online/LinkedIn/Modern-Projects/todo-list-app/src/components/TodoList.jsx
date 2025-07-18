@@ -3,6 +3,7 @@ import NewTodoForm from './NewTodoForm';
 import TodoListItem from './TodoListItem';
 
 function TodoList() {
+  const todosAreLoading = useSelector(state => !state.loading.value.completed);
   const todos = useSelector(state => state.todos.value);
   const completedTodos = todos.filter(todo => todo.isCompleted);
   const incompleteTodos = todos.filter(todo => !todo.isCompleted);
@@ -13,15 +14,21 @@ function TodoList() {
 
       <NewTodoForm />
 
-      <h2>Completed:</h2>
-      {completedTodos.map((todo, index) => (
-        <TodoListItem key={index} todo={todo} />
-      ))}
+      {todosAreLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <h2>Completed:</h2>
+          {completedTodos.map(todo => (
+            <TodoListItem key={todo.id} todo={todo} />
+          ))}
 
-      <h2>Incomplete:</h2>
-      {incompleteTodos.map((todo, index) => (
-        <TodoListItem key={index} todo={todo} />
-      ))}
+          <h2>Incomplete:</h2>
+          {incompleteTodos.map(todo => (
+            <TodoListItem key={todo.id} todo={todo} />
+          ))}
+        </>
+      )}
     </div>
   );
 }
