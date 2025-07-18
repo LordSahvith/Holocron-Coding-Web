@@ -1,14 +1,17 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createTodo } from './todoSlice';
 
-function NewTodoForm({ onCreateClicked }) {
+function NewTodoForm() {
   const [inputText, setInputText] = useState('');
+  const dispatch = useDispatch();
 
   return (
     <form
       onSubmit={event => {
         event.preventDefault();
-        onCreateClicked(inputText);
         setInputText('');
+        dispatch(createTodo(inputText));
       }}
     >
       <input
