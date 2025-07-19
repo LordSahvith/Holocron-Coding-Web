@@ -1,4 +1,4 @@
-const fileStream = require("fs");
+const fileStream = require('fs');
 
 // fileStream.renameSync(`./${generatedDirectoryName}/logs.js`, "./logs/logs.js");
 
@@ -12,10 +12,10 @@ const fileStream = require("fs");
 //   console.log("./logs/assets directory removed.");
 // });
 
-fileStream.readdirSync("./logs/assets").forEach((file) => {
+fileStream.readdirSync('./logs/assets').forEach(file => {
   fileStream.renameSync(`./logs/assets/${file}`, `./logs/test/${file}`);
 });
 
-console.log("files removed");
-fileStream.rmdirSync("./logs/assets");
-console.log("./logs/assets directory removed.");
+console.log('files removed');
+fileStream.rmdirSync('./logs/assets');
+console.log('./logs/assets directory removed.');

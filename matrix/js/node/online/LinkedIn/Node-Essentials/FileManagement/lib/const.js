@@ -1,3 +1,3 @@
 module.exports = {
-  generatedDirectoryName: "jsGeneratedFiles",
+  generatedDirectoryName: 'jsGeneratedFiles',
 };

@@ -1,4 +1,4 @@
-const fileStream = require("fs");
+const fileStream = require('fs');
 
 // fileStream.readdir("./", function (error, files) {
 //   if (error) {
@@ -12,7 +12,7 @@ const fileStream = require("fs");
 
 // let ipsum = fileStream.readFileSync("./ipsum.txt", "utf-8");
 
-fileStream.readFile("./ipsum.txt", "utf-8", (error, ipsum) => {
+fileStream.readFile('./ipsum.txt', 'utf-8', (error, ipsum) => {
   if (error) {
     throw error;
   }

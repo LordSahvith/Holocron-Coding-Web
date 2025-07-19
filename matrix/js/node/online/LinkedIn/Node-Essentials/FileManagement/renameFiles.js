@@ -1,5 +1,5 @@
-const { generatedDirectoryName } = require("./lib/const");
-const fileStream = require("fs");
+const { generatedDirectoryName } = require('./lib/const');
+const fileStream = require('fs');
 
 // fileStream.renameSync(
 //   `./${generatedDirectoryName}/writeMD.md`,
@@ -18,10 +18,10 @@ const fileStream = require("fs");
 
 // fileStream.unlinkSync("./lib/testFile.js");
 
-fileStream.unlink("./lib/testFile.js", function (error) {
+fileStream.unlink('./lib/testFile.js', function (error) {
   if (error) {
     throw error;
   }
 
-  console.log("Test file removed");
+  console.log('Test file removed');
 });

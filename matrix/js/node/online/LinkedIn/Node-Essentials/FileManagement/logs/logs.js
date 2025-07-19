@@ -1,1 +1,1 @@
-let logs = ["important logs"];
+let logs = ['important logs'];

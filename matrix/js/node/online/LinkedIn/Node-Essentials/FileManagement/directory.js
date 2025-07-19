@@ -1,14 +1,14 @@
-const fileStream = require("fs");
+const fileStream = require('fs');
 const { generatedDirectoryName } = require('./lib/const');
 
 if (fileStream.existsSync(generatedDirectoryName)) {
-  console.log("file already exists.");
+  console.log('file already exists.');
 } else {
-  fileStream.mkdir(generatedDirectoryName, function (error) {
+  fileStream.mkdir(generatedDirectoryName, error => {
     if (error) {
       console.log(`ERROR: ${error}`);
     } else {
-      console.log("directory created");
+      console.log('directory created');
     }
   });
 }
