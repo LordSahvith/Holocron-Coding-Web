@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yu-Gi-Oh! Card Form</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <form action="./index.html">
+          <label for="cardName">Name:</label>
+          <input id="cardName" type="text" placeholder="Horn of the Unicorn" />
+
+          <label for="cardID">ID:</label>
+          <input id="cardID" type="text" placeholder="YGLD-ENA29" />
+
+          <label for="cardEdition">Edition:</label>
+          <select name="cardEdition" id="cardEdition">
+            <option value="unlimitedEdition">Unlimited Edition</option>
+            <option value="limitedEdition">Limited Edition</option>
+            <option value="firstEdition">1st Edition</option>
+          </select>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
