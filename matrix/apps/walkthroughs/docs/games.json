@@ -1,0 +1,159 @@
+{
+  "games": [
+    {
+      "gameTitle": "Assassin's Creed",
+      "collectibles": {
+        "flags": [
+          {
+            "id": 0,
+            "location": {
+              "id": 1,
+              "section": "Jeruselam",
+              "subSection": "Poor District",
+              "description": "In back right by table"
+            }
+          },
+          {
+            "id": 1,
+            "location": {
+              "id": 2,
+              "section": "Jeruselam",
+              "subSection": "Poor District",
+              "description": "In back right by table"
+            }
+          },
+          {
+            "id": 100,
+            "location": {
+              "id": 1,
+              "section": "Acre",
+              "subSection": "Poor District",
+              "description": "In back right by table"
+            }
+          }
+        ],
+        "templars": [
+          {
+            "id": 0,
+            "location": {
+              "id": 1,
+              "section": "Jeruselam",
+              "subSection": "Poor District",
+              "description": "In back right by table"
+            }
+          },
+          {
+            "id": 1,
+            "location": {
+              "id": 2,
+              "section": "Jeruselam",
+              "subSection": "Poor District",
+              "description": "In back right by table"
+            }
+          },
+          {
+            "id": 6,
+            "location": {
+              "id": 1,
+              "section": "Acre",
+              "subSection": "Poor District",
+              "description": "In back right by table"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "gameTitle": "Batman Arkham Asylum",
+      "collectibles": {
+        "trophies": [
+          {
+            "id": 0,
+            "location": {
+              "id": 1,
+              "section": "Intensive Treatment",
+              "subSection": "Holding Cells",
+              "description": "In back right by table"
+            }
+          },
+          {
+            "id": 1,
+            "location": {
+              "id": 2,
+              "section": "Intensive Treatment",
+              "subSection": "Patient Pacification Chamber",
+              "description": "In back right by table"
+            }
+          },
+          {
+            "id": 4,
+            "location": {
+              "id": 1,
+              "section": "Arkham Mansion",
+              "subSection": "Patient Pacification Chamber",
+              "description": "In back right by table"
+            }
+          }
+        ],
+        "teeth": [
+          {
+            "id": 0,
+            "location": {
+              "id": 1,
+              "section": "Intensive Treatment",
+              "subSection": "Holding Cells",
+              "description": "In back right by table"
+            }
+          },
+          {
+            "id": 1,
+            "location": {
+              "id": 2,
+              "section": "Intensive Treatment",
+              "subSection": "Patient Pacification Chamber",
+              "description": "In back right by table"
+            }
+          },
+          {
+            "id": 4,
+            "location": {
+              "id": 1,
+              "section": "Arkham Mansion",
+              "subSection": "Patient Pacification Chamber",
+              "description": "In back right by table"
+            }
+          }
+        ],
+        "riddle": [
+          {
+            "id": 0,
+            "location": {
+              "id": 1,
+              "section": "Intensive Treatment",
+              "subSection": "Holding Cells",
+              "description": "In back right by table"
+            }
+          },
+          {
+            "id": 1,
+            "location": {
+              "id": 2,
+              "section": "Intensive Treatment",
+              "subSection": "Patient Pacification Chamber",
+              "description": "In back right by table"
+            }
+          },
+          {
+            "id": 4,
+            "location": {
+              "id": 1,
+              "section": "Arkham Mansion",
+              "subSection": "Patient Pacification Chamber",
+              "description": "In back right by table"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

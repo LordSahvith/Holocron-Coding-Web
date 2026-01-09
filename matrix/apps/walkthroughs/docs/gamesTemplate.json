@@ -1,0 +1,31 @@
+{
+  "games": {
+    "gameTitle": "Title",
+    "collectibles": {
+      "itemType": [
+        {
+          "id": 0,
+          "location": {
+            "id": 1,
+            "section": "Name",
+            "subSection": "Name",
+            "description": "In back right by table"
+          }
+        }
+      ]
+    },
+    "missions": {
+      "missionType": [
+        {
+          "id": 0,
+          "location": {
+            "id": 1,
+            "section": "Name",
+            "subSection": "Name",
+            "description": "In back right by table"
+          }
+        }
+      ]
+    }
+  }
+}
