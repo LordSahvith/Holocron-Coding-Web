@@ -1,0 +1,54 @@
+{
+    "id": "AC1",
+    "Memory_Blocks": [
+        {
+            "id": "MB1",
+            "name": "Memory Block 1",
+            "Day1": {
+                "morning": {
+                    "cameras": [
+                        "cam1",
+                        "cam2",
+                        "cam3"
+                    ]
+                },
+                "evening": {
+                    "cameras": [
+                        "cam1",
+                        "cam2",
+                        "cam3"
+                    ],
+                    "lucy": [
+                        "encounter1",
+                        "encounter2"
+                    ]
+                },
+                "strands": {
+                    "strand1": {
+                        "glitches": [
+                            "glitch1",
+                            "glitch2",
+                            "glitch3"
+                        ]
+                    },
+                    "strand2": {
+                        "glitches": [
+                            "glitch1",
+                            "glitch2",
+                            "glitch3"
+                        ]
+                    },
+                    "strand4": {
+                        "glitches": [
+                            "glitch1",
+                            "glitch2",
+                            "glitch3",
+                            "glitch4",
+                            "glitch5"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}
