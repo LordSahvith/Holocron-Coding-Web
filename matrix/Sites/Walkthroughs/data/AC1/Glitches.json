@@ -1,0 +1,34 @@
+{
+  "glitches": [
+    {
+      "id": "glitch_01",
+      "name": "Glitch 1",
+      "description": "During the first memory as Altair after the tutorial, there is a glitch during the conversation with the other Assassin's at the beginning of Solomon's Temple in Jeruselam.",
+      "memory": {
+        "block": "1",
+        "strand": "1",
+        "name": "Memory Strand 01 / Aquisition"
+      }
+    },
+    {
+      "id": "glitch_02",
+      "name": "Glitch 2",
+      "description": "While still in Solomon's Temple in Jeruselam, the second glitch occurs while the Assassin's are planning their next move after discover the Ark of the Convenant. This glitch focues on the Ark.",
+      "memory": {
+        "block": "1",
+        "strand": "1",
+        "name": "Memory Strand 01 / Aquisition"
+      }
+    },
+    {
+      "id": "glitch_03",
+      "name": "Glitch 3",
+      "description": "This next glitch happens during the same cutscene as the previous one, but this time if focuses on Robert de Sable as the Templars enter the room below the Ark of the Convenant.",
+      "memory": {
+        "block": "1",
+        "strand": "1",
+        "name": "Memory Strand 01 / Aquisition"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "lucy": [
+    {
+      "id": "lucy_01",
+      "name": "Lucy 1",
+      "description": "",
+      "memory": {
+        "block": "1",
+        "strand": "evening"
+      }
+    }
+  ]
+}

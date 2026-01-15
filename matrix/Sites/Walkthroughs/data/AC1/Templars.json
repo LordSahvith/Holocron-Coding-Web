@@ -1,0 +1,13 @@
+{
+  "templars": [
+    {
+      "id": "templar_01",
+      "name": "Templar 1",
+      "description": "",
+      "location": {
+        "map": "Kingdom",
+        "area": ""
+      }
+    }
+  ]
+}

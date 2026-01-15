@@ -1,0 +1,70 @@
+{
+  "glitches": [
+    {
+      "id": "glitch_01",
+      "name": "Glitch 1",
+      "description": "",
+      "memory": {
+        "block": "1",
+        "strand": "1"
+      }
+    }
+  ],
+  "lucy": [
+    {
+      "id": "lucy_01",
+      "name": "Lucy 1",
+      "description": "",
+      "memory": {
+        "block": "1",
+        "strand": "evening"
+      }
+    }
+  ],
+  "flags:": {
+    "assassins": [
+      {
+        "id": "flag_01",
+        "name": "Assassin Flag 1",
+        "description": "",
+        "location": {
+          "map": "Masyaf",
+          "area": "n/a"
+        }
+      }
+    ],
+    "king_richards": [
+      {
+        "id": "flag_01",
+        "name": "King Richard Flag 1",
+        "description": "",
+        "location": {
+          "map": "Kingdom",
+          "area": "n/a"
+        }
+      }
+    ],
+    "saracens": [
+      {
+        "id": "flag_01",
+        "name": "Saracen Flag 1",
+        "description": "",
+        "location": {
+          "map": "Damascus",
+          "area": "Poor area"
+        }
+      }
+    ]
+  },
+  "templars": [
+    {
+      "id": "templar_01",
+      "name": "Templar 1",
+      "description": "",
+      "location": {
+        "map": "Kingdom",
+        "area": ""
+      }
+    }
+  ]
+}

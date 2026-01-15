@@ -1,0 +1,37 @@
+{
+  "flags:": {
+    "assassins": [
+      {
+        "id": "flag_01",
+        "name": "Assassin Flag 1",
+        "description": "",
+        "location": {
+          "map": "Masyaf",
+          "area": "n/a"
+        }
+      }
+    ],
+    "king_richards": [
+      {
+        "id": "flag_01",
+        "name": "King Richard Flag 1",
+        "description": "",
+        "location": {
+          "map": "Kingdom",
+          "area": "n/a"
+        }
+      }
+    ],
+    "saracens": [
+      {
+        "id": "flag_01",
+        "name": "Saracen Flag 1",
+        "description": "",
+        "location": {
+          "map": "Damascus",
+          "area": "Poor area"
+        }
+      }
+    ]
+  }
+}
