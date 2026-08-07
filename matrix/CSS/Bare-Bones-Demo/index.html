@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+
+    <section class="elements">
+
+        <h1>Heading level 1</h1>
+        <h2>Heading level 2</h2>
+        <h3>Heading level 3</h3>
+        <h4>Heading level 4</h4>
+        <h5>Heading level 5</h5>
+        <h6>Heading level 6</h6>
+
+        <p>This is a <strong>paragraph</strong> with an <a href="#">example link</a>, an <em>emphasized</em> word, and a <small>small note</small>.</p>
+
+        <figure>
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='80'><rect width='100%' height='100%' fill='%23ddd'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-family='sans-serif' font-size='14'>Placeholder</text></svg>" alt="placeholder image">
+            <figcaption>Figure caption</figcaption>
+        </figure>
+
+        <hr>
+
+        <h3>Lists</h3>
+        <ul>
+            <li>Unordered item one</li>
+            <li>Unordered item two</li>
+        </ul>
+        <ol>
+            <li>Ordered item one</li>
+            <li>Ordered item two</li>
+        </ol>
+
+        <h3>Description List</h3>
+        <dl>
+            <dt>Term</dt>
+            <dd>Definition for the term.</dd>
+        </dl>
+
+        <blockquote>
+            This is a blockquote example.
+        </blockquote>
+
+        <pre><code>const x = 42; // code sample</code></pre>
+
+        <h3>Table</h3>
+        <table>
+            <thead>
+                <tr><th>Header 1</th><th>Header 2</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Cell A1</td><td>Cell A2</td></tr>
+                <tr><td>Cell B1</td><td>Cell B2</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Form controls</h3>
+        <form>
+            <fieldset>
+                <legend>Contact</legend>
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your name">
+
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@example.com">
+
+                <label for="age">Age</label>
+                <input id="age" type="number" min="0" max="120">
+
+                <label>
+                    <input type="checkbox" name="subscribe"> Subscribe
+                </label>
+
+                <label>Options</label>
+                <label><input type="radio" name="opt" checked> A</label>
+                <label><input type="radio" name="opt"> B</label>
+
+                <label for="select">Select</label>
+                <select id="select">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                </select>
+
+                <label for="message">Message</label>
+                <textarea id="message" rows="4"></textarea>
+
+                <label for="range">Range</label>
+                <input id="range" type="range" min="0" max="10" value="5">
+
+                <label for="search">Search</label>
+                <input id="search" type="search">
+
+                <button type="submit">Submit</button>
+                <button type="button">Button</button>
+            </fieldset>
+        </form>
+
+        <h3>Interactive & Misc</h3>
+        <details>
+            <summary>Details / Summary</summary>
+            Hidden content inside details.
+        </details>
+
+        <progress value="60" max="100">60%</progress>
+        <meter value="0.6">60%</meter>
+
+        <time datetime="2026-08-07">2026-08-07</time>
+        <abbr title="HyperText Markup Language">HTML</abbr>
+
+        <address>123 Example St.<br>City, Country</address>
+
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="30" fill="#666"/></svg>
+
+        <audio controls>
+            <source src="" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+
+        <video controls width="320">
+            <source src="" type="video/mp4">
+            Your browser does not support video.
+        </video>
+
+        <p class="sr-only">Screen-reader-only content</p>
+
+    </section>
+    
+</body>
+</html>

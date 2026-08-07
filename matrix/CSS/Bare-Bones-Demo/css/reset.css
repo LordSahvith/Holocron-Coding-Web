@@ -1,0 +1,153 @@
+/*
+	Comprehensive HTML/CSS Reset
+	- Modern, opinionated reset combining best practices
+	- Sets box-sizing, removes default spacing, normalizes form elements,
+		images, tables, lists, and accessibility-friendly focus styles.
+	- Drop into the top of your stylesheet or import before your main styles.
+*/
+
+/* Box sizing and inheritance */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+/* Base html/body */
+html {
+	-webkit-text-size-adjust: 100%; /* Prevent font inflation in landscape */
+	-moz-tab-size: 4;
+	tab-size: 4;
+	line-height: 1.15; /* Improve readability */
+}
+
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+	color: inherit;
+	background: transparent;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Make images and media scale responsively */
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Remove default margins for common elements */
+h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd {
+	margin: 0;
+}
+
+/* Lists */
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Links */
+a {
+	color: inherit;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+/* Make form elements inherit font styles and remove default margins */
+button, input, optgroup, select, textarea {
+	font: inherit;
+	margin: 0;
+}
+
+/* Remove default button styles */
+button {
+	background: transparent;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+/* Accessibility: visible focus styles (customize in your theme) */
+:focus {
+	outline: 3px solid Highlight;
+	outline-offset: 2px;
+}
+
+/* Tables */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Hidden attribute */
+[hidden] {
+	display: none !important;
+}
+
+/* Abbreviations */
+abbr[title] {
+	text-decoration: underline dotted;
+	cursor: help;
+}
+
+/* Remove autofill background color in WebKit-based browsers */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px transparent inset;
+	box-shadow: 0 0 0px 1000px transparent inset;
+	-webkit-text-fill-color: inherit;
+}
+
+/* Remove clear button on Internet Explorer */
+input::-ms-clear, input::-ms-reveal {
+	display: none;
+}
+
+/* Search input decoration */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	-webkit-appearance: none;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* Selection color */
+::selection {
+	background: #b3d4fc;
+	color: #000;
+}
+
+/* Utility: ensure form controls align vertically in a predictable way */
+input, textarea, select, button {
+	line-height: normal;
+}
+
+/* Small helpers (optional) */
+.sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0 0 0 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+/* End of reset */
+
